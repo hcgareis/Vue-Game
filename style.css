@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(238, 214, 202, 0.5);
+}
+
+header {
+  background-color: rgba(139, 0, 2, 0.7);
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  padding: 0.1rem;
+}
+
+section {
+  width: 90%;
+  max-width: 60rem;
+  margin: auto;
+  background-color: rgba(117, 112, 111, .50);
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 0.1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+img {
+  display: block;
+  margin: auto;
+  margin-top: 1.5rem;
+  float: center;
+  width: 95%;
+  height: 95%;
+}
+
+#game-box {
+  display: grid;
+  grid-template-rows: 1fr 7fr;
+  min-width: 900px;
+}
+
+#character-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1rem;
+}
+
+#char-desc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: .25rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: rgb(226, 218, 172);
+}
+
+#char-stats {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  text-align: left;
+  border-left: 1px solid black;
+  padding: 5%;
+  font-size: 1.5rem;
+}
+
+#fight-screen {
+  display: grid;
+  grid-template-rows: 1fr 4fr 1fr;
+  background-color: white;
+  margin-bottom: 1rem;
+}
+
+#game-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-bottom: 2.5px dashed black;
+}
+
+#visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.img-fight {
+  width: 50%;
+}
+
+#i-p {
+  float: left;
+}
+
+#i-m {
+  float: right;
+  text-align: right;
+}
+
+#controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border-top: 2.5px dashed black;
+}
+
+#char-info {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  border-right: 2.5px dashed black;
+  padding: 0.25rem;
+}
+
+#display-message {
+  border-right: 2.5px dashed black;
+  text-align: center;
+  word-wrap: normal;
+  font-size: 1.25rem;
+}
+
+#monster-info {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  padding: 0.25rem;
+}
+
+.healthbar {
+  border: 1px solid black;
+  height: 100%;
+  width: 100%;
+  background: white;
+}
+
+.healthbar-value {
+  width: 100%;
+  height: 100%;
+}
+
+#p{
+  background-color: rgb(32, 180, 32);
+}
+
+#m {
+  background-color: rgb(216, 37, 37);
+}
+
+.cntl-btn {
+  background-color: rgb(226, 218, 172);
+  border-radius: 15px;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}

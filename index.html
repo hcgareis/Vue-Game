@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Playground App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@next" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Vue Playground</h1>
+  </header>
+  <div id="main">
+    <section v-if="playerSelection === true" id="game-box">
+      <h2>Character Selection:</h2>
+      <div id="character-cards">
+        <button v-for="char in characters" @click="select(char.id)" id="char-desc">
+          <div id="char-img">
+            <img :src="char.img" :alt="char.class">
+          </div>
+          <div id="char-stats">
+            <span><b><u>Class:</u></b><br> {{ char.class }}</span>
+            <span><b><u>Attack:</u></b><br> {{ char.attackName }}, {{ char.attackPower }}</span>
+            <span><b><u>Special Attack:</u></b><br> {{ char.spAttack }}, {{ char.spAttackPower }}</span>
+            <span><b><u>Health:</u></b><br> {{ char.health }}</span>
+          </div>
+        </button>
+      </div>
+    </section>
+    <section v-if="playerSelection === false" id="game-box">
+      <h2>FIGHT!</h2>
+      <div id="fight-screen">
+        <div id="game-head">
+          <div id="char-info">
+            <span>PLAYER:</span>
+            <span><b>{{ player.class }}</b></span>
+            <span>HEALTH:</span>
+            <span class="healthbar"><div class="healthbar-value" id="p" :style="{width: pHealth + '%'}"></div></span>
+          </div>
+          <div id="display-message">
+            <div v-for="i in battleLog" key="i" :style="{color: textType(i)}">
+              {{ i }}
+            </div>
+          </div>
+          <div id="monster-info">
+            <span>MONSTER:</span>
+            <span><b>{{ monster.class }}</b></span>
+            <span>HEALTH:</span>
+            <span class="healthbar"><div class="healthbar-value" id="m" :style="{width: mHealth + '%'}"></div></span>
+          </div>
+        </div>
+        <div id="visual">
+          <div id="i-p"><img :src="player.img" :alt="player.class" class="img-fight"></div>
+          <div id="i-m"><img :src="monster.img" :alt="monster.class" class="img-fight"></div>
+        </div>
+        <div id="controls">
+          <button @click="pAttack" :style="{backgroundColor: attackAvail}" class="cntl-btn">Attack: {{ player.attackName }}</button>
+          <button @click="spAttack" :style="{backgroundColor: spAttackAvail}" class="cntl-btn">Special Attack: {{ player.spAttack }}</button>
+          <button @click="heal" :style="{backgroundColor: healAvail}" class="cntl-btn">Heal</button>
+          <button @click="surrender" :style="{backgroundColor: surrenderAvail}" class="cntl-btn">Surrender</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
